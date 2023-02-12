@@ -8,6 +8,7 @@ import { useGetCurrentMap } from '../../hooks/data/maps/useGetCurrentMap';
 import { Color } from '../../lib/colors';
 import { store } from '../../store';
 import { HotkeysUtils } from '../../utils/HotkeyUtils';
+import { GridSettings } from './GridSettings';
 
 export const ZoomControls: React.FC = observer(() => {
   const { data: map } = useGetCurrentMap();
@@ -106,6 +107,9 @@ export const ZoomControls: React.FC = observer(() => {
             {isFullScreen ? <FullscreenExit /> : <Fullscreen />}
           </ToggleButton>
         </Tooltip>
+      </ToggleButtonGroup>
+      <ToggleButtonGroup orientation="vertical" sx={{ background: alpha(Color.BlackLight, 0.9), marginTop: 1 }}>
+        <GridSettings />
       </ToggleButtonGroup>
     </Box>
   );
